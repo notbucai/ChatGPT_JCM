@@ -1,7 +1,7 @@
 <template>
   <div class="chat-window">
     <div class="top">
-      <el-row style="height: 70px;">
+      <el-row class="top-row">
 
         <el-col :span="personInfoSpan[0]">
           <div class="head-pic">
@@ -38,14 +38,14 @@
       <div class="line"></div>
     </div>
 
-    <div class="botoom" style="background-color:rgb(50, 54, 68);">
+    <div class="bottom" style="background-color:rgb(50, 54, 68);">
       <!-- :style="{ backgroundImage: 'url(' + contentBackImageUrl + ')' }" -->
       <div class="chat-content" id="chat-content" ref="chatContent">
         <div class="chat-wrapper" v-for="item in chatList" :key="item.id">
           <div class="chat-friend" v-if="item.uid !== 'jcm'">
             <div class="chat-text" v-if="item.chatType == 0">
               <el-row :gutter="20">
-                <el-col :span="2">
+                <el-col :span="2" class="copy-icon">
                   <svg t="1679666016648" @click="$copy(item.msg, '已复制')" class="icon" viewBox="0 0 1024 1024"
                     version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="6241" width="22" height="22">
                     <path
@@ -77,7 +77,7 @@
           </div>
           <div class="chat-me" v-else>
             <div class="chat-text" v-if="item.chatType == 0">
-              <span style="font-size:16px">{{ item.msg }}</span>
+              <span>{{ item.msg }}</span>
             </div>
             <div class="chat-img" v-if="item.chatType == 1">
               <img :src="item.msg" alt="表情" v-if="item.extend.imgType == 1" style="width: 100px; height: 100px" />
@@ -93,7 +93,7 @@
             <div class="info-time">
               <span>{{ item.name }}</span>
               <span>{{ item.time }}</span>
-              <img :src="item.headImg" alt="" />
+              <!-- <img :src="item.headImg" alt="" /> -->
             </div>
           </div>
         </div>
@@ -117,7 +117,7 @@
         <!--输入框-->
         <el-input type="textarea" id="textareaMsg" ref="textInput" :autosize="{}" class="textarea" v-model="inputMsg"
           maxlength="2000"
-          style="margin-left: 2%;margin-top: 3px;min-height: 51px;max-height:400px;max-width: 80%;min-width: 45%;  height: auto;"
+          style="margin-left: 2%;max-height:400px;max-width: 80%;min-width: 45%;  height: auto;"
           @keydown.enter.stop @keydown.enter.shift.prevent="insertLineBreak" placeholder="在此输入您的提示词~"></el-input>
         <!--发送-->
         <div>
@@ -703,7 +703,7 @@ export default {
     scrollBottom() {
       this.$nextTick(() => {
         const scrollDom = this.$refs.chatContent;
-        animation(scrollDom, scrollDom.scrollHeight - scrollDom.offsetHeight);
+          animation(scrollDom, scrollDom.scrollHeight - scrollDom.offsetHeight);
       });
     },
     //关闭标签框
@@ -974,6 +974,9 @@ textarea::-webkit-scrollbar-thumb {
       display: block;
       clear: both;
     }
+    .top-row {
+      height: 70px;
+    }
 
     .head-pic {
       float: left;
@@ -1021,7 +1024,7 @@ textarea::-webkit-scrollbar-thumb {
     }
   }
 
-  .botoom {
+  .bottom {
     width: 100%;
     height: 85vh;
     background-size: 100% 100%;

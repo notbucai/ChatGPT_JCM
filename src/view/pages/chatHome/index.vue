@@ -708,9 +708,9 @@ export default {
   mounted() {
     this.chatWindowInfo = {
       img: "",
-      name: "ChatGPT-3.5",
-      detail: "chatgpt v3.5 所基于的模型",
-      lastMsg: "chatgpt v3.5 所基于的模型",
+      name: "AI语伴＆AI建图",
+      detail: "AI建图帮助用户充分利用先进技术",
+      lastMsg: "AI建图帮助用户充分利用先进技术",
       id: "gpt-3.5-turbo",
       headImg: AI_HEAD_IMG_URL,
       showHeadImg: true
@@ -958,9 +958,9 @@ export default {
         this.showChatWindow = true;
         const info = {
           img: "",
-          name: "ChatGPT-3.5",
-          detail: "chatgpt v3.5 所基于的模型",
-          lastMsg: "chatgpt v3.5 所基于的模型",
+          name: "AI语伴＆AI建图",
+          detail: "AI建图帮助用户充分利用先进技术",
+          lastMsg: "AI建图帮助用户充分利用先进技术",
           id: "gpt-3.5-turbo",
           headImg: AI_HEAD_IMG_URL,
           showHeadImg: true
@@ -1033,9 +1033,9 @@ export default {
       this.cutSetting = 1
       this.chatWindowInfo = {
         img: "",
-        name: "ChatGPT-3.5",
-        detail: "chatgpt v3.5 所基于的模型",
-        lastMsg: "chatgpt v3.5 所基于的模型",
+        name: "AI语伴＆AI建图",
+        detail: "AI建图帮助用户充分利用先进技术",
+        lastMsg: "AI建图帮助用户充分利用先进技术",
         id: "gpt-3.5-turbo",
         headImg: AI_HEAD_IMG_URL,
         showHeadImg: true
